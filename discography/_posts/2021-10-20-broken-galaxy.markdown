@@ -13,8 +13,8 @@ buy:
   - url: https://yurylapitsky.bandcamp.com/track/broken-galaxy
     name: BandCamp
 embed_player:
-  type: spotify
-  src: 3yQnwwPtNPFDup4ViJ2wLY
+  type: bandcamp
+  src: track=1493578683/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/
 
 ---
 
