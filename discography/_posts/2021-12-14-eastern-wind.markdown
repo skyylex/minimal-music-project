@@ -14,7 +14,7 @@ play:
       url: https://soundcloud.com/yury-lapitsky/eastern-wind
 embed_player:
   type: bandcamp
-  src: track=2706061605/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/
+  src: track=2706061605/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/
 ---
 
 An instrumental single inspired by Eastern sounds.
