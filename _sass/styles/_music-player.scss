@@ -3,8 +3,8 @@
     height: 40px;
     width: 100%;
 
-    color: white;
-    font-size: 0.75em;
+    color: var(--text, #fff);
+    font-size: 0.9em;
     overflow: hidden;
     display: grid;
     grid-template-rows: 8px auto;

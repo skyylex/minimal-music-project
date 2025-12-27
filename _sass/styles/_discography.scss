@@ -54,7 +54,7 @@
             line-height: 1em;
             font-weight: 300;
             padding-bottom: 0.5em;
-            color: $p_text;
+            color: var(--text, #{$p_text});
         }
 
         a {

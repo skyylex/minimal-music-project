@@ -2,7 +2,7 @@ h1 {
     text-transform: uppercase;
     font-weight: 700;
     text-rendering: optimizeLegibility;
-    color: $black;
+    color: var(--text, #{$black});
     text-align: center;
     font-size: 2.5em;
     letter-spacing: -1px;
@@ -13,7 +13,7 @@ h2, h3 a {
     font-weight: 500;
     font-size: 1.4em;
     line-height: 1.4em;
-    color: $black;
+    color: var(--text, #{$black});
 }
 
 * {
@@ -23,8 +23,8 @@ h2, h3 a {
     line-height: 1.7em;
 }
 body {
-    font-size: 16px;
-    color: $white;
+    font-size: 18px;
+    color: var(--text, #{$p_text});
     font-family: 'Jost',Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
 }
@@ -40,7 +40,7 @@ main {
         }
         .content-separator {
             margin: $gap auto;
-            color: $p_text;
+            color: var(--text, #{$p_text});
             width: 100%;
             &:last-child {
                 margin: $gap auto 0 auto;
@@ -69,8 +69,8 @@ main {
                 right: 0;
             }
             & > a {
-                color: $p_text;
-                @include underline-on-hover($black);
+                color: var(--text, #{$p_text});
+                @include underline-on-hover(var(--text, #{$black}));
             }
         }
     }
@@ -131,7 +131,7 @@ img {
 
 @include mobile {
     body {
-        font-size: 15px;
+        font-size: 17px;
     }
     h1 {
         font-size: 2em;
@@ -156,9 +156,9 @@ audio {
     line-height: 1em;
     font-weight: 300;
     padding-bottom: 0.5em;
-    color: #000000;
+    color: var(--text, #000000);
     a {
-        font-size: 0.9em;
+        font-size: 1em;
         @include underline-on-hover($black);
     }
 }

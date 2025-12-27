@@ -1,36 +1,38 @@
 main {
-    background-color: $white;
-    color: black;
-    float: right;
-    width: $content-width-desktop;
+    background-color: var(--bg, #{$white});
+    color: var(--text, #{$p_text});
+    float: none;
+    width: 100%;
     min-height: 300px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - (#{$menu-height} + #{$header-height}));
     overflow-y: auto;
     position: fixed;
-    left: $menu-size;
-    top: 0;
+    left: 0;
+    top: calc(#{$menu-height} + #{$header-height});
     @include mobile {
-        top: $mobile-menu-height;
+        top: calc(#{$mobile-menu-height} + #{$mobile-header-height});
         left: 0;
         width: 100%;
-        height: calc(100% - #{$mobile-menu-height});
+        height: calc(100% - (#{$mobile-menu-height} + #{$mobile-header-height}));
     }
     &.no-menu {
         width: 100%;
         left: 0;
         top: 0;
     }
-}
+
+    color: var(--text, #{$p_text});
+} 
 footer {
     width: 100%;
     text-align: center;
-    color:$p_text;
+    color: var(--text, #{$p_text});
     display: flex;
     justify-content: center;
-    font-size: 0.7em;
+    font-size: 0.85em;
     p {
         margin: 0;
     }
@@ -38,13 +40,13 @@ footer {
 
 .is-minimal-menu {
     main {
-        width: $content-width-desktop-minimal-menu;
-        left: $minimal-menu-size;
+        width: 100%;
+        left: 0;
         @include mobile {
-            top: $minimal-menu-size;
+            top: calc(#{$minimal-menu-size} + #{$mobile-header-height});
             left: 0;
             width: 100%;
-            height: calc(100% - #{$minimal-menu-size});
+            height: calc(100% - (#{$minimal-menu-size} + #{$mobile-header-height}));
         }
     }
 }

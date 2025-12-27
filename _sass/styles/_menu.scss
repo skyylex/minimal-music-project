@@ -1,23 +1,25 @@
 .menu {
     $root: &;
-    background-color: $white;
+    background-color: var(--surface, #{$white});
     position: fixed;
     left: 0;
-    top: 0;
-
+    top: $header-height;
+    width: 100%;
+    height: $menu-height;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-    float: left;
-    width: $menu-size;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
-    padding: 8px 0 0 22px;    
-    overflow: hidden;
+    padding: 0 1rem;
+    z-index: 200;
+
     @include mobile {
         flex-direction: row;
         width: 100%;
-        max-height: $mobile-menu-height;
+        top: $mobile-header-height;
+        height: $mobile-menu-height;
+        padding: 0 0.6rem;
     }
     &.expanded--visible {
         @include mobile {
@@ -30,7 +32,7 @@
         }
     }
     &.expanded {
-        z-index: 10;
+        z-index: 210;
         .menu-top_expand  {
             .bar_top {
                 -webkit-transform: rotate(-45deg) translate(-8px, 8px);
@@ -46,7 +48,7 @@
         }
         @include mobile {
             .navigation {
-                display: block;
+                display: flex;
             }
             .menu-contact {
                 display: flex;
@@ -60,17 +62,19 @@
     &-top {
         box-sizing: border-box;
         height: 100%;
-        flex-grow: 1;
-        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative; /* allow centered absolute nav */
         &_logo {
-            max-width: 100px;
-            margin-bottom: 1em;
+            max-width: 140px;
+            margin-right: 1rem;
             a {
-                color: #000000;
+                color: var(--text, #000000);
                 img {
-                    max-height: 100px;
+                    max-height: calc(#{$menu-height} - 20px);
                     @include mobile {
-                        max-height: calc(#{$mobile-menu-height} - 15px);
+                        max-height: calc(#{$mobile-menu-height} - 10px);
                     }
                     width: auto;
                     max-width: 100%;
@@ -92,50 +96,37 @@
             .bar_top, .bar_middle, .bar_bottom {
                 width: 35px;
                 height: 5px;
-                background-color: #333;
+                background-color: var(--text, #333);
                 margin: 6px 0;
                 transition: 0.4s;
               }
-          }          
+          }
+
+          
     }
     ul, ol, dl {
+        margin: 0;
+        padding: 0;
+        list-style: none;
         li, dt {
-            margin-left: 0;
-            list-style: none;
-            margin-bottom: 8px;
-            margin-top: 8px;
-
-            a {
-                align-items: flex-start;
-                color: $p_text;
-                cursor: pointer;
-                display: flex;
-                font-weight: 400;
-                letter-spacing: 3px;
-                font-size: 1em;
-                &:hover {
-                    transition: all 0.3s ease-in-out 0s;
-                    color: $p_light;
-                    text-decoration: none;
-                }
-                &.selected {
-                    font-weight: 600;
-                }
-
-                i {
-                    margin-right: 5px;
-                }
-
-                span {
-                    max-width: 100%;
-                    hyphens: auto;
-                }
-            }
+            display: block;
+            margin: 0;
         }
     }
 
+    /* Navigation links styling (desktop & mobile) */
     .navigation {
         transition: opacity 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: absolute; /* pin to center to avoid re-centering */
+        left: 50%;
+        transform: translateX(-50%);
+        flex: 0 0 auto; /* do not grow/shrink to avoid shifting layout */
+        white-space: nowrap;
+        z-index: 210;
+        will-change: transform, opacity;
         @include mobile {
             display: none;
             opacity: 0;
@@ -144,10 +135,68 @@
             top: $mobile-menu-height;
             height: calc(100% - #{$mobile-menu-height});
             width: 100%;
-            background-color: $white;
+            background-color: var(--surface, #{$white});
             padding-left: 2em;
+            transform: none;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 0;
+            white-space: normal;
         }
     }
+
+    .navigation li a {
+        align-items: center;
+        color: var(--text, #{$p_text});
+        cursor: pointer;
+        display: inline-flex;
+        justify-content: center;
+        font-weight: 400;
+        letter-spacing: 3px;
+        font-size: 1em;
+        padding: 0.5rem 0.6rem;
+        min-width: 6rem; /* lock item widths to prevent reflow */
+        text-align: center;
+        position: relative;
+        transition: color 0.2s ease;
+        -webkit-font-smoothing: antialiased;
+        &:hover {
+            color: var(--muted, #{$p_light});
+            text-decoration: none;
+        }
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 6px;
+            height: 3px;
+            background-color: var(--muted, #{$p_light});
+            border-radius: 2px;
+            transform-origin: center;
+            transform: scaleX(0);
+            opacity: 0;
+            transition: transform 0.18s ease, opacity 0.18s ease;
+            will-change: transform, opacity;
+        }
+
+        &.selected {
+            font-weight: 400; /* keep weight stable to avoid layout shifts */
+            &::after {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+    }
+
+
 
     &-contact {
         display:flex;
@@ -160,7 +209,7 @@
             opacity: 0;
         }
         a {
-            color: $p_text;
+            color: var(--text, #{$p_text});
             cursor:pointer;
             text-align:left;
             text-size-adjust:100%;
