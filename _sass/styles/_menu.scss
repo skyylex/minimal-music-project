@@ -1,12 +1,20 @@
 .menu {
     $root: &;
-    background-color: var(--surface, #{$white});
+    background-color: var(--menu-bg, var(--surface, #{$white}));
+    color: var(--menu-text, #111111);
+    border-top: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow);
     position: fixed;
     left: 0;
     top: $header-height;
     width: 100%;
     height: $menu-height;
-    display: flex;
+    display: flex; 
+
+    @include mobile {
+        box-shadow: none;
+        border-top: 1px solid rgba(0,0,0,0.03);
+    }
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -96,7 +104,7 @@
             .bar_top, .bar_middle, .bar_bottom {
                 width: 35px;
                 height: 5px;
-                background-color: var(--text, #333);
+                background-color: var(--menu-text, #111111);
                 margin: 6px 0;
                 transition: 0.4s;
               }
@@ -135,7 +143,7 @@
             top: $mobile-menu-height;
             height: calc(100% - #{$mobile-menu-height});
             width: 100%;
-            background-color: var(--surface, #{$white});
+            background-color: var(--menu-bg, var(--surface, #{$white}));
             padding-left: 2em;
             transform: none;
             align-items: flex-start;
@@ -147,7 +155,7 @@
 
     .navigation li a {
         align-items: center;
-        color: var(--text, #{$p_text});
+        color: inherit;
         cursor: pointer;
         display: inline-flex;
         justify-content: center;
@@ -161,7 +169,7 @@
         transition: color 0.2s ease;
         -webkit-font-smoothing: antialiased;
         &:hover {
-            color: var(--muted, #{$p_light});
+            color: var(--menu-link-hover, #5b5b5b);
             text-decoration: none;
         }
         &:focus {
@@ -178,7 +186,7 @@
             right: 10%;
             bottom: 6px;
             height: 3px;
-            background-color: var(--muted, #{$p_light});
+            background-color: var(--menu-link-hover, rgba(255,255,255,0.12));
             border-radius: 2px;
             transform-origin: center;
             transform: scaleX(0);
@@ -209,7 +217,7 @@
             opacity: 0;
         }
         a {
-            color: var(--text, #{$p_text});
+            color: inherit;
             cursor:pointer;
             text-align:left;
             text-size-adjust:100%;

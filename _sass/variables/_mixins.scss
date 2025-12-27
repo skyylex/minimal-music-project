@@ -49,7 +49,7 @@
 @mixin hyperlink-convention {
     a {
       cursor: pointer;
-      @include underline-on-hover($hyperlink);
-      color: $hyperlink;
+      @include underline-on-hover(var(--link, #{$hyperlink}));
+      color: var(--link, #{$hyperlink});
   }
 }

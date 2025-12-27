@@ -16,12 +16,29 @@ h2, h3 a {
     color: var(--text, #{$black});
 }
 
+:root {
+    --header-bg: darkslategray; /* darkslategray */
+    --header-text: #ffffff;
+
+    /* Charcoal site-wide theme */
+    --menu-bg: #2F3438; /* Charcoal */
+    --bg: var(--menu-bg); /* site background */
+    --surface: #2A2E31; /* slightly lighter panels */
+    --text: #FFFFFF; /* primary text on dark background */
+    --muted: rgba(255,255,255,0.72);
+    --menu-text: #ffffff;
+    --menu-link-hover: rgba(255,255,255,0.16);
+    --link: #CBA052; /* site link accent (antique gold) */
+    --panel-border: rgba(255,255,255,0.04);
+    --panel-shadow: 0 6px 18px rgba(0,0,0,0.24);
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     line-height: 1.7em;
-}
+}  
 body {
     font-size: 18px;
     color: var(--text, #{$p_text});
@@ -81,9 +98,27 @@ a {
     color: inherit;
     transition: all 0.4s ease-in-out 0s;
 }
+
+/* Content area links (use site accent) */
+.content-container a,
+main a {
+    color: var(--link, #CBA052);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 0.4s;
+    -webkit-text-decoration-color: transparent;
+    -moz-text-decoration-color: transparent;
+}
+.content-container a:hover,
+main a:hover {
+    text-decoration-color: var(--link, #CBA052);
+    -webkit-text-decoration-color: var(--link, #CBA052);
+    -moz-text-decoration-color: var(--link, #CBA052);
+}
+
 a, p, li {
     font-size: 1.1em;
-}
+} 
 
 li {
     margin-left: 1em;
@@ -93,7 +128,9 @@ hr {
     margin-top: 2em;
     margin-bottom: 2em;
     width: 100%;
-}
+    border: none;
+    border-top: 2px solid rgba(255,255,255,0.12);
+} 
 
 img {
     max-width: 100%;
@@ -106,7 +143,7 @@ img {
 
 .click-to-enlarge {
     cursor: zoom-in;
-    box-shadow: 0 0px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
     position: relative;
     width: fit-content;
     width: -moz-fit-content;
@@ -120,8 +157,7 @@ img {
         width: 100%;
         height: 100%;
         opacity: 0;
-        box-shadow: 0 0 12px black;
-        opacity: 0;
+        box-shadow: 0 0 18px rgba(255,255,255,0.03);
         transition: opacity 0.3s ease-in-out;
     }
     &:hover::after {
