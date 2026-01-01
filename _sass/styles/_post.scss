@@ -77,8 +77,8 @@
             }
         }
         a {
-            color: var(--text, #{$p_text});
-            @include underline-on-hover(var(--text, #{$p_text}));
+            color: var(--link, #CBA052);
+            @include underline-on-hover(var(--link, #CBA052));
         }
     }
 
@@ -95,7 +95,16 @@
         }
     }
 
+    header {
+        h1 a {
+            color: var(--link, #CBA052);
+            @include underline-on-hover(var(--link, #CBA052));
+        }
+    }
+
     a {
         font-size: 1em;
+        color: var(--link, #CBA052);
+        @include underline-on-hover(var(--link, #CBA052));
     }
 }
