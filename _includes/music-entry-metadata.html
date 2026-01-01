@@ -1,16 +1,16 @@
-<p class="discography-album_release-date">
+<p class="music-album_release-date">
     release date: {{ include.currPost.date | date_to_long_string }}
 </p>
 
 {% if include.currPost.type %}
-<p class="discography-album_type">
+<p class="music-album_type">
     release type: {{ include.currPost.type }}
 </p>
 {% endif %}
 
 {% assign playArray = include.currPost.play | size %}
 {% if playArray != 0 %}
-<p class="discography-album_play">
+<p class="music-album_play">
     play:
     {% for play in include.currPost.play %}
     <a href="{{ play.url }}" target="_blank">{{ play.name }}</a>
@@ -23,7 +23,7 @@
 
 {% assign downloadArray = include.currPost.download | size %}
 {% if downloadArray != 0 %}
-<p class="discography-album_download">
+<p class="music-album_download">
     download:
     {% for download in include.currPost.download %}
     <a href="{{ download.url }}" target="_blank">{{ download.name }}</a>
@@ -36,7 +36,7 @@
 
 {% assign buyArray = include.currPost.buy | size %}
 {% if buyArray != 0 %}
-<p class="discography-album_buy">
+<p class="music-album_buy">
     buy from:
     {% for buy in include.currPost.buy %}
     <a href="{{ buy.url }}" target="_blank">{{ buy.name }}</a>
@@ -49,7 +49,7 @@
 
 {% assign otherArray = include.currPost.other | size %}
 {% if otherArray != 0 %}
-<p class="discography-album_other">
+<p class="music-album_other">
     other links:
     {% for other in include.currPost.other %}
     <a href="{{ other.url }}" target="_blank">{{ other.name }}</a>

@@ -3,10 +3,10 @@ menu_pages:
   url: /
   category: home
 
-- title: Discography
-  url: /discography/
-  category: discography
-  tooltip: Discography tooltip
+- title: Music
+  url: /music/
+  category: Music
+  tooltip: music releases
 
 - title: About
   url: about.html
