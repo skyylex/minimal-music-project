@@ -1,6 +1,23 @@
 .music {
     max-width: 100%;
 
+    &-header {
+        font-size: 3.2em;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.3em;
+        text-align: center;
+        color: var(--text, #{$p_text});
+        line-height: 1.1;
+        padding-top: 0.2em;
+
+        @include mobile {
+            font-size: 2.2em;
+            margin-bottom: 0.2em;
+            padding-top: 0.1em;
+        }
+    }
+
     &-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
