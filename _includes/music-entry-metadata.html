@@ -60,6 +60,8 @@
 </p>
 {% endif %}
 
+<hr style="border-top: 0px"></hr>
+
 {% if include.currPost.embed_player %}
     {% if include.currPost.embed_player.type ==	"audio_file" %}
         {% include music-player.html audioData=include.currPost.embed_player %}

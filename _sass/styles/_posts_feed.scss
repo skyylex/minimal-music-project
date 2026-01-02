@@ -47,9 +47,10 @@ $image-dim: 192px;
     }
     .article-date {
         font-size: 0.95em;
-        margin-top: -0.5em;
+        margin-top: 0;
+        margin-bottom: 0.5em;
         opacity: 0.5;
-        text-align: center;
+        text-align: left;
     }
 
     figure {
