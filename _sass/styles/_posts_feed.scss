@@ -75,6 +75,12 @@ $image-dim: 192px;
         min-width: 0;
     }
 
+    &_image-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     &_image {
         max-width: 300px;
         max-height: 300px;

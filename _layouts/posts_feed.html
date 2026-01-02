@@ -67,22 +67,25 @@ category: home
                 </h2>
             </header>
             <div class="post-feed_columns">
-                <figure>
-                    <div class="click-to-enlarge">
-                        <img
-                            click-to-enlarge
-                            {% if post.image_alt %}
-                            alt="{{ post.image_alt }}"
-                            {% endif %}
-                            class="post-feed_image"
-                            src="{{ post.image | relative_url }}"
-                            {% if post.responsiveImage %}
-                            srcset="{% for img in post.responsiveImage %}{{ img.src | relative_url }} {{ img.size }}w{% if forloop.last == false %},{% endif %}{% endfor %}"
-                            sizes="30vw"
-                            {% endif %}
-                        />
-                    </div>
-                </figure>
+                <div class="post-feed_image-wrapper">
+                    <figure>
+                        <div class="click-to-enlarge">
+                            <img
+                                click-to-enlarge
+                                {% if post.image_alt %}
+                                alt="{{ post.image_alt }}"
+                                {% endif %}
+                                class="post-feed_image"
+                                src="{{ post.image | relative_url }}"
+                                {% if post.responsiveImage %}
+                                srcset="{% for img in post.responsiveImage %}{{ img.src | relative_url }} {{ img.size }}w{% if forloop.last == false %},{% endif %}{% endfor %}"
+                                sizes="30vw"
+                                {% endif %}
+                            />
+                        </div>
+                    </figure>
+                    {% include music-streaming-icons.html currPost=post %}
+                </div>
                 <div class="post-feed_content">
                     <p class="article-date">{{ post.date | date: "%Y-%m-%d" }}</p>
                     {% include music-entry.html currPost=post %}
