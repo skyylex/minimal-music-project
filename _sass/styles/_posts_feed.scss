@@ -97,4 +97,31 @@ $image-dim: 192px;
             margin-top: 3vw;;
         }
     }
+
+    .music-streaming-icons {
+        display: flex;
+        gap: 12px;
+        margin: 0.8em 0;
+        flex-wrap: wrap;
+
+        a {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.15);
+                text-decoration: none;
+            }
+
+            img {
+                width: 28px;
+                height: 28px;
+                display: block;
+                vertical-align: middle;
+            }
+        }
+    }
 }

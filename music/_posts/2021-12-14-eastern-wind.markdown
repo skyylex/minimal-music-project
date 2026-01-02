@@ -4,14 +4,8 @@ title: Eastern wind
 description: An instrumental single inspired by Eastern sounds.
 image: assets/img/eastern-wind-cover.jpg
 type: single
-buy:
-  - url: https://yurylapitsky.bandcamp.com/track/eastern-wind
-    name: BandCamp
-play:
-    - name: YouTube
-      url: https://www.youtube.com/watch?v=Gepbn_S1RRw
-    - name: SoundCloud
-      url: https://soundcloud.com/yury-lapitsky/eastern-wind
+spotify_url: https://open.spotify.com/track/2K9QoFWdnj0b4TeyRIkRHH
+itunes_url: https://music.apple.com/nl/song/eastern-wind/1862662047
 embed_player:
   type: bandcamp
   src: track=2706061605/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/

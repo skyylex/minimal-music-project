@@ -16,6 +16,7 @@
                 {{ include.currPost.excerpt | strip_html }}
                 {% endif %}
             </p>
+            {% include music-streaming-icons.html currPost=include.currPost %}
             {% include music-entry-metadata.html currPost=include.currPost %}
         </section>
     {% include read-more.html currPost=include.currPost %}

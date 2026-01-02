@@ -4,14 +4,8 @@ title: Broken Galaxy
 description: New single released! Broken Galaxy – A Synth-Driven Journey Through Dark Space
 image: assets/img/broken-galaxy-cover.jpg
 type: single
-play:
-    - name: YouTube
-      url: https://www.youtube.com/
-    - name: SoundCloud
-      url: https://soundcloud.com/
-buy:
-  - url: https://yurylapitsky.bandcamp.com/track/broken-galaxy
-    name: BandCamp
+spotify_url: https://open.spotify.com/track/3yQnwwPtNPFDup4ViJ2wLY
+itunes_url: https://music.apple.com/nl/song/broken-galaxy/1849572582 
 embed_player:
   type: bandcamp
   src: track=1493578683/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/
