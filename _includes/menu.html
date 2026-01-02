@@ -1,11 +1,31 @@
-<header class="site-header">
-    <div class="site-header_inner">
-        <a class="artist-title" href="{{ '/' | relative_url }}" title="{{ site.title }}">
-            {{ site.title }}
-        </a>
-    </div>
-</header>
 <nav class="menu" role="navigation" aria-label="Main menu">
+    <div class="menu-contact">
+        {% if site.data.metaData.spotify_url %}
+        <a href="{{ site.data.metaData.spotify_url }}" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="streaming-link">
+            <img src="{{ '/assets/img/spotify-white.svg' | relative_url }}" alt="Spotify">
+        </a>
+        {% endif %}
+        {% if site.data.metaData.itunes_url %}
+        <a href="{{ site.data.metaData.itunes_url }}" target="_blank" rel="noopener noreferrer" aria-label="iTunes" class="streaming-link">
+            <img src="{{ '/assets/img/itunes-white.svg' | relative_url }}" alt="iTunes">
+        </a>
+        {% endif %}
+        {% if site.data.metaData.bandcamp_url %}
+        <a href="{{ site.data.metaData.bandcamp_url }}" target="_blank" rel="noopener noreferrer" aria-label="Bandcamp" class="streaming-link">
+            <img src="{{ '/assets/img/bandcamp-white.png' | relative_url }}" alt="Bandcamp">
+        </a>
+        {% endif %}
+        {% if site.data.metaData.instagram_url %}
+        <a href="{{ site.data.metaData.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="streaming-link">
+            <img src="{{ '/assets/img/instagram-white.png' | relative_url }}" alt="Instagram">
+        </a>
+        {% endif %}
+        {% for contact in site.data.menu.menu_contacts %}
+        <a href="{{ contact.url | relative_url }}" target="{{ contact.target }}">
+            <i class="{{ contact.faicon }}"></i>
+        </a>
+        {% endfor %}
+    </div>
     <div class="menu-top">
         <ul class="navigation">
             {% for menu_item in site.data.menu.menu_pages %}
@@ -25,13 +45,5 @@
             <div class="bar_middle"></div>
             <div class="bar_bottom"></div>
         </div>
-    </div>
-    <div class="menu-contact">
-        {% for contact in site.data.menu.menu_contacts %}
-
-        <a href="{{ contact.url | relative_url }}" target="{{ contact.target }}">
-            <i class="{{ contact.faicon }}"></i>
-        </a>
-        {% endfor %}
     </div>
 </nav>

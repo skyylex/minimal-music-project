@@ -58,12 +58,6 @@
             .navigation {
                 display: flex;
             }
-            .menu-contact {
-                display: flex;
-                position: fixed;
-                bottom: 0.5em;
-                left: 1em;
-            }
         }
 
       }
@@ -207,26 +201,56 @@
 
 
     &-contact {
-        display:flex;
-        justify-content:left;
-        margin-bottom: 0.6em;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 8px;
         flex-wrap: wrap;
+        flex-shrink: 0;
+        order: -1;
+        margin-right: 2em;
+        min-width: 140px;
         transition: opacity 0.3s ease-in-out;
+        
         @include mobile {
-            display: none;
-            opacity: 0;
+            gap: 6px;
+            margin-right: 1em;
+            min-width: 120px;
         }
+        
         a {
             color: inherit;
-            cursor:pointer;
-            text-align:left;
-            text-size-adjust:100%;
-            user-select:none;
-            margin-left: 4px;
-            margin-right: 4px;
-            opacity: 60%;
+            cursor: pointer;
+            text-align: left;
+            text-size-adjust: 100%;
+            user-select: none;
+            transition: transform 0.2s ease;
             &:hover {
-                opacity: 100%;
+                transform: scale(1.1);
+            }
+            
+            &.streaming-link {
+                display: inline-block;
+                margin: 0;
+                width: 24px;
+                height: 24px;
+                
+                @include mobile {
+                    width: 20px;
+                    height: 20px;
+                }
+                
+                img {
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                    vertical-align: middle;
+                    
+                    @include mobile {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
             }
         }
     }
