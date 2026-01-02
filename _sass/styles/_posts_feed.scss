@@ -55,14 +55,19 @@ $image-dim: 192px;
         width: max-content;
         margin: auto;
         margin-bottom: 1em;
-        max-width: 100%;
+        max-width: 300px;
     }
 
     &_image {
-        max-width: 100%;
-        max-height: 80vh;
+        max-width: 300px;
+        max-height: 300px;
         border: 0;
         margin: auto;
+    }
+
+    .click-to-enlarge {
+        max-width: 300px;
+        max-height: 300px;
     }
 
 
