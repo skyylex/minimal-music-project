@@ -129,6 +129,8 @@
         white-space: nowrap;
         z-index: 210;
         will-change: transform, opacity;
+        margin-left: calc((140px + 2em) / -2); /* offset half of menu-contact width to true center */
+        
         @include mobile {
             display: none;
             opacity: 0;
@@ -138,6 +140,7 @@
             height: calc(100% - #{$mobile-menu-height});
             width: 100%;
             background-color: var(--menu-bg, var(--surface, #{$white}));
+            margin-left: 0;
             padding-left: 2em;
             transform: none;
             align-items: flex-start;
