@@ -39,11 +39,15 @@ h2, h3 a {
     box-sizing: border-box;
     line-height: 1.7em;
 }  
+html {
+    background-color: var(--bg, #{$white});
+}
 body {
     font-size: 18px;
     color: var(--text, #{$p_text});
     font-family: 'Jost',Arial,sans-serif;
     -webkit-font-smoothing: antialiased;
+    background-color: var(--bg, #{$white});
 }
 main {
     .content-container {
