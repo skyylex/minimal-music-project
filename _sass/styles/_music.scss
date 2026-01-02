@@ -13,6 +13,37 @@
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 1em;
     }
+
+    .music-album {
+        flex-direction: column;
+        
+        &_cover {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: none;
+
+            &-wrapper {
+                margin-right: 0;
+                margin-bottom: 0;
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+        }
+
+        &_title {
+            margin-top: 0.5em;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    }
 }
 
 .music-album {
