@@ -12,3 +12,13 @@ embed_player:
 ---
 
 An instrumental single inspired by Eastern sounds.
+
+This track represents a humble attempt to incorporate eastern vibe into a sad slow tempo beat using minimalistic approach (only 4 instruments).
+
+Gear used: 
+- Reaper (DAW)
+- Arturia Pigments (VSTi, synthesized Koto sounds)
+- Arturia Pigments (VSTi, synthesized Strings & Winds sounds)
+- Native Instruments Komplete (YANGQIN, chinese strings instrument sampler)
+- Steven Slate Drums (VSTi, drum sounds)
+- Native Instruments Komplete S49 MKII (midi-keyboard)

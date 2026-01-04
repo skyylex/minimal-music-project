@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Broken Galaxy
-description: New single released! Broken Galaxy – A Synth-Driven Journey Through Dark Space
+description: A synth-driven journey through dark space.
 image: assets/img/broken-galaxy-cover.jpg
 type: single
 spotify_url: https://open.spotify.com/track/3yQnwwPtNPFDup4ViJ2wLY
@@ -12,9 +12,15 @@ embed_player:
 
 ---
 
-🎶 Broken Galaxy – A Synth-Driven Journey Through Dark Space
+A synth-driven journey through dark space.
 
-Signals from a fractured universe passing silently through a dark expanse...
+This instrumental track was inspired by the hanging dissonances produced by one of synthesizers—tones that felt like a spacecraft traveling through the cracks of time and space.
 
-This instrumental track was inspired by the hanging dissonances produced by one of synthesizers—tones that felt like echoes from a remote reality. 
+Gear used: 
+- Reaper (DAW)
+- Arturia Pigments (VSTi, synth sounds)
+- Steven Slate Drums (VSTi, drum sounds)
+- Fractal Audio AX8 (guitar processor)
+- Schecter Extreme Passive 6 (electric guitar)
+- Native Instruments Komplete S49 MKII (midi-keyboard)
 
