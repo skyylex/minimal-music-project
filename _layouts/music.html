@@ -5,13 +5,30 @@ layout: default
     <div class="music">
         <h1 class="music-header">Music</h1>
         {{ content }}
-        <div class="music-grid">
-            {% for post in paginator.posts %}
+        
+        {% assign types = "" | split: "" %}
+        {% for post in paginator.posts %}
             {% if post.categories contains page.category %}
-            {% include music-grid-entry.html currPost=post %}
+                {% if post.type %}
+                    {% unless types contains post.type %}
+                        {% assign types = types | push: post.type %}
+                    {% endunless %}
+                {% endif %}
             {% endif %}
-            {% endfor %}
+        {% endfor %}
+        
+        {% for type in types %}
+        <div class="music-section">
+            <h2 class="music-section-title">{{ type | capitalize }}s</h2>
+            <div class="music-grid">
+                {% for post in paginator.posts %}
+                {% if post.categories contains page.category and post.type == type %}
+                {% include music-grid-entry.html currPost=post %}
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
+        {% endfor %}
 
         {% include pagination-buttons.html %}
     </div>

@@ -3,6 +3,28 @@
     max-width: 100%;
 }
 
+.music-section {
+    margin-bottom: 3em;
+
+    @include mobile {
+        margin-bottom: 2em;
+    }
+}
+
+.music-section-title {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+    margin-top: 0;
+    text-transform: capitalize;
+    color: var(--text, #{$p_text});
+
+    @include mobile {
+        font-size: 1.3em;
+        margin-bottom: 1em;
+    }
+}
+
 .music-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
