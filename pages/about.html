@@ -17,13 +17,28 @@ category: about
         Contacts:
     <ul>
         <li>
-            <a>
-                E-mail:
-            </a>
+            E-mail: <a href="#" id="email-link" class="email-contact"></a>
         </li>
     </ul>
     </p>
     <hr />
 </div>
+
+<script>
+    (function() {
+        const decode = (s) => atob(s);
+        const parts = [
+            'eXVyeS5sYXBpdHNreS5tdXNpYw==',  // user
+            'cHJvdG9u',                        // domain
+            'bWU='                             // tld
+        ];
+        const email = decode(parts[0]) + '@' + decode(parts[1]) + '.' + decode(parts[2]);
+        const linkEl = document.getElementById('email-link');
+        if (linkEl) {
+            linkEl.href = 'mailto:' + email;
+            linkEl.textContent = email;
+        }
+    })();
+</script>
 
 <!-- Link styles moved to _sass/styles/_defaults.scss (.content-container a) -->
