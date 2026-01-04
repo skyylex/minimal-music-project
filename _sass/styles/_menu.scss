@@ -195,8 +195,8 @@
         &.selected {
             font-weight: 400; /* keep weight stable to avoid layout shifts */
             &::after {
-                transform: scaleX(1);
-                opacity: 1;
+                transform: scaleX(0);
+                opacity: 0;
             }
         }
     }
