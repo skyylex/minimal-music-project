@@ -3,9 +3,9 @@ layout: default
 ---
 <div class="post">
     <div class="content-container {{ page.category }}">
-
-        <header>
+        <div class="post-layout">
             {% if page.image %}
+            <aside class="post-aside">
                 <figure class="post-cover">
                     <div class="click-to-enlarge">
                         <img
@@ -21,13 +21,16 @@ layout: default
                         />
                     </div>
                 </figure>
+            </aside>
             {% endif %}
-        </header>
-        <div class="post-content">
-            {{ content }}
-        </div>
-        <div class="post-metadata">
-            {% include music-entry-metadata.html currPost=page %}
+            <div class="post-main">
+                <div class="post-content">
+                    {{ content }}
+                </div>
+                <div class="post-metadata">
+                    {% include music-entry-metadata.html currPost=page %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
