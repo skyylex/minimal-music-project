@@ -7,6 +7,13 @@ $image-dim: 192px;
     justify-content: flex-start;
     align-items: flex-start;
     color: var(--text, #{$p_text});
+
+    h1 {
+        flex: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+    }
     hr {
         margin-bottom: 0.25em;
         @include mobile {

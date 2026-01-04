@@ -4,6 +4,7 @@ category: home
 ---
 <div class="content-container">
     <div class="post-feed">
+        <h1 class="post-feed-header">News</h1>
         {{ content }}
         {% for post in paginator.posts %}
         {% if post.categories contains page.category %}
