@@ -1,10 +1,9 @@
 <article class="music-album">
     <figure class="music-album_cover-wrapper">
         <div class="music-album_cover">
-            <div class="click-to-enlarge">
+            <div class="music-cover-link">
                 <a href="{% if include.currPost.external_url %}{{ include.currPost.external_url | relative_url }}{% else %}{{ include.currPost.url | relative_url }}{% endif %}" {% if include.currPost.external_url %}target="_blank"{% endif %}>
                     <img
-                        click-to-enlarge
                         {% if include.currPost.image_alt %}
                         alt="{{ include.currPost.image_alt }}"
                         {% endif %}

@@ -21,7 +21,23 @@
         const imageWrappers = document.querySelectorAll(".click-to-enlarge");
         imageWrappers.forEach(imageWrapper => {
             {% if site.data.metaData.clickToEnlargeImages %}
-            imageWrapper.addEventListener("click", () => {
+            imageWrapper.addEventListener("click", (e) => {
+                // Check if the click target or any parent is a link
+                let target = e.target;
+                let isInsideLink = false;
+                while (target && target !== imageWrapper) {
+                    if (target.tagName === 'A') {
+                        isInsideLink = true;
+                        break;
+                    }
+                    target = target.parentElement;
+                }
+                
+                // If inside a link, let the link navigate
+                if (isInsideLink) {
+                    return;
+                }
+                
                 const img = imageWrapper.getElementsByTagName("img")[0];
                 const src = img.attributes.getNamedItem("src");
                 const modal = document.createElement("div");
